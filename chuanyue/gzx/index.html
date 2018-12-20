@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>管理系统</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/jquery.min.js"></script>
+	<style>
+		*{margin:0;padding:0;}
+		li{
+			list-style: none;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		.head{
+			width: 100%;
+			height: 150px;
+			background-color: deepskyblue;
+			margin: 0 auto;
+		}
+		.head h1{
+			margin: 0 auto;
+			width: 300px;
+			font-size: 40px;
+			color: #333;
+			padding-top: 50px;
+		}
+		aside{
+			width: 200px;
+			height: 100%;
+			background-color: #eee;
+			float: left;
+			padding-left: 20px;
+			padding-top: 20px;
+			padding-right: 20px;
+			position: absolute;
+			bottom: 0;
+			top: 150px;
+		}
+		aside li{
+			line-height: 2em;
+			text-align: center;
+		}
+		aside li a{
+			display: block;
+			font-size: 16px;
+			letter-spacing: 2px;
+		}
+		aside li a#on{
+			background-color: orange;
+		}
+		
+		article{
+			width: 100%;
+			height: 100%;
+			float: left;
+			padding: 20px 20px 20px 220px;
+		}
+		.btn-primary{
+			float: right;
+		}
+		.mask{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-color: #666;
+			opacity: .8;
+			display: none;
+		}
+		.popup{
+			width: 600px;
+			padding: 20px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			background-color: #fff;
+			display: none;
+		}
+		#tem{
+			display: none;
+		}
+	</style>
+	<script>
+		$(function(){
+			var http = new XMLHttpRequest();
+			http.open("get","http://127.0.0.1:90/newsData");
+			http.send();
+			http.onreadystatechange = function(){
+				if(http.status == 200 && http.readyState == 4){
+					var arrObj = JSON.parse(http.responseText);
+					for(var item of arrObj){
+						var newTr = $('#tem').clone(true);
+						newTr.attr('id','');
+						newTr.find('.newsId').html(item.id);
+						newTr.find('.title').html(item.title);
+						newTr.find('.details').html(item.details.substring(0,80));
+						newTr.appendTo($('tbody'))
+					}
+				}
+			}
+			function popupShow(){
+				$('.mask').fadeIn();
+				$('.popup').fadeIn();
+			}
+			function popupHide(){
+				$('.mask').fadeOut();
+				$('.popup').fadeOut();
+			}
+			$('.btn-primary').click(function(){
+				popupShow();
+			});
+			$('.btn-info').click(function(){
+				popupHide();
+			});
+			$('.btn-default').click(function(){
+				popupHide();
+			});
+			$('.btn-danger').click(function(){
+				if(confirm('确认删除')){
+					var newsId = $(this).closest('tr').find('.newsId').html();
+					$.ajax({
+						url:`http://127.0.0.1:90/deleteNews`,
+						data:{newsId:newsId},
+						success:function(data){
+							
+						},
+						dataType:"jsonp"
+					});
+					$(this).closest('tr').remove();
+				}
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="head">
+		<h1>页面内容管理</h1>
+	</div>
+	<aside>
+		<ul>
+			<li><a href="#" id="on" name="view">传悦观点列表</a></li>
+			<li><a href="#" name="source">传悦资源列表</a></li>
+		</ul>
+	</aside>
+	<article>
+		<button class="btn btn-primary">新建内容</button>
+		<table class="table table-hover">
+			<thead>
+				<th>编号</th>
+				<th>标题</th>
+				<th>内容</th>
+				<th>修改/删除</th>
+			</thead>
+			<tbody>
+				<tr id="tem">
+					<td width="60" class="newsId"></td>
+					<td class="title"></td>
+					<td width="600" class="details"></td>
+					<td width="160">
+						<button class="btn btn-info">修改</button>
+						<button class="btn btn-danger">删除</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+	<div class="mask"></div>
+	<div class="popup">
+		<form action="http://127.0.0.1:90/addNews" method="get">
+			<div class="form-group">
+		    	<label for="title">title</label>
+		   	 	<input type="text" class="form-control" id="title" name="title">
+		  </div>
+		  <div class="form-group">
+		    	<label for="">details</label>
+		   	 	<textarea class="form-control" rows="6" name="details"></textarea>
+		  </div>
+		  <p style="text-align: center;">
+		  	<input type="submit" class="btn btn-info" value="确定提交">
+		  	<input type="button" class="btn btn-default" value="取消">
+		  </p>
+		</form>
+	</div>
+</body>
+</html>

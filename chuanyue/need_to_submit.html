@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>需求提交</title>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+	<div class="header">
+		<div class="w clearfix">
+			<div class="logo">
+				<a href="index.html#"><img src="images/logo.jpg"/></a>
+			</div>
+			<div class="head-nav fl">
+				<a href="index.html#">网站首页</a>
+				<a href="resource.html#">传悦资源</a>
+				<a href="demo.html#">传悦案例</a>
+				<a href="#">传悦服务</a>
+				<a href="serch_engine_one.html">解决方案</a>
+				<a href="need_to_submit.html#" style="background: #dd4012;color: #fff;">需求提交</a>
+			</div>
+			<div class="head-icon fr">
+				<a href="#"><i class="iconfont">&#xe61c;</i>0535-60652189</a>
+				<a href="#"><i class="iconfont">&#xe601;</i></a>
+				<a href="#"><i class="iconfont">&#xe806;</i></a>
+				<a href="#"><i class="iconfont">&#xe691;</i></a>
+				<a href="#"><i class="iconfont">&#xe603;</i></a>
+			</div>
+		</div>
+	</div>
+	<div class="banner">
+		<img src="images/banner9.jpg"/>
+		<div class="banner-nav">
+			<div class="w" style="color: #e3e3e3;">
+				<a href="index.html#">网站首页</a> <i class="iconfont">&#xe605;</i>&nbsp;&nbsp;<a href="need_to_submit.html">需求提交</a>
+			</div>
+		</div>	
+	</div>
+	<div class="main">
+		<div class="w mainpage14">
+			<h1>SUBMISSION REQUIREMENTS</h1>
+			<h2>向我们提交您的需求</h2>
+			<form action="">
+				<div class="page14-1">
+					<div class="page14-1-1 clearfix">
+						<h4>您的详细信息</h4>
+						<input type="text" placeholder="你的姓名">
+						<input type="text" placeholder="公司名称">
+						<input type="text" placeholder="联系电话">
+						<input type="text" placeholder="公司地址">
+						<input type="text" placeholder="电子邮箱">
+						<input type="text" placeholder="所在城市">
+					</div>
+					<div class="page14-1-2">
+						<h4>您的详细需求</h4>
+						<textarea></textarea>
+					</div>
+				</div>
+				<div class="page14-1">
+					<div class="page14-1-3">
+						<div class="page14-1-3-1">
+							<b>是否已拥有网站</b>
+							<i>
+								<span><input type="radio" name="on">是</span>
+								<span><input type="radio" name="on">否</span>
+								<input type="text" placeholder="http://" disabled>
+							</i>
+						</div>
+						<div class="page14-1-1 page14-1-3-2">
+							<h4>您期待的服务类型</h4>
+							<input type="text" value="搜索引擎营销解决方案" readonly>
+							<input type="text" value="电子商务营销解决方案" readonly>
+							<input type="text" value="社会化媒体营销解决方案" readonly>
+							<input type="text" value="精准数字营销解决方案" readonly>
+							<input type="text" value="整合网络营销全套解决方案" readonly>
+							<input type="text" value="网络平台搭建解决方案" readonly>
+						</div>
+					</div>
+					<div class="page14-1-4">
+						<div class="page14-1-4-1">
+							<h4>项目计划预算<span>（单位/元）</span></h4>
+							<img src="images/program_03.png" alt="">
+						</div>
+						<div class="page14-1-4-1 page14-1-4-2">
+							<h4>项目计划时间</h4>
+							<img src="images/program_06.png" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="page14-2">
+					<h4>您了解到传悦的途径</h4>
+					<div class="page14-2-1">
+						<span><input type="radio" name="sel1">百度搜索</span>
+						<span><input type="radio" name="sel1">google搜索</span>
+						<span><input type="radio" name="sel1">新闻博客</span>
+						<span><input type="radio" name="sel1">微博</span>
+						<span><input type="radio" name="sel1">微信</span>
+						<span><input type="radio" name="sel1">社区论坛</span>
+						<span><input type="radio" name="sel1">朋友介绍</span>
+						<span><input type="radio" name="sel1">会议演讲活动贴</span>
+						<span><input type="radio" name="sel1">其他</span>
+					</div>
+				</div>
+				<div class="page14-3" id="subclose"><input type="submit" value="提交需求"></div>
+			</form>
+		</div>
+	</div>
+	<div class="aside" id="aside">
+		<div class="main-aside">
+			<img src="images/w_righttrue_03.png" alt="">
+			<h2>您的需求已成功提交</h2>
+			<p>我们会尽快联系您，为了不打扰到您的生活请留下您方便联系的时间段</p>
+			<div><input type="text" placeholder="输入你宽松的时间段"></div>
+			<a href="#" id="qdclose"><input type="button" value="确定"></a>
+			<a href="#" id="asideclose"><img src="images/w_rightwrong_03.png" alt=""></a>
+		</div>
+		<script>
+			var asideClose=document.getElementById("asideclose");
+			asideClose.onclick=function(){
+				document.getElementById("aside").style.display="none";
+			};
+			var qdClose=document.getElementById("qdclose");
+			qdClose.onclick=function(){
+				document.getElementById("aside").style.display="none";
+			};
+			var subClose=document.getElementById("subclose");
+			subClose.onclick=function(){
+				document.getElementById("aside").style.display="block";
+			}
+		</script>
+	</div>
+	<div class="bot">
+		<div class="w clearfix">
+			<div class="bot-l fl">
+				<img src="images/foot-logo.png"/>
+			</div>
+			<div class="bot-r fr">
+				<a href="about_us_culture.html#">关于传悦</a><a href="#">新闻动态</a><a href="/viewpoint">传悦观点</a><a href="contact_us.html#">联系传悦 </a><a href="recruitment_information.html#">加入传悦</a><a href="#">付款账户</a>
+				<p>Copyright&nbsp;&nbsp;©2013&nbsp;&nbsp;&nbsp;创梦网络科技有限责任公司&nbsp;&nbsp;&nbsp;‖&nbsp;&nbsp;&nbsp;传悦&nbsp;&nbsp;Chnyoo.cn&nbsp;&nbsp;All&nbsp;&nbsp;Rights Reserved&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;京ICP备12005221号</p> 
+			</div>
+		</div>	
+	</div>
+</body>
+</html>

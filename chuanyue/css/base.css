@@ -1,0 +1,128 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+i{
+	font-style: normal;
+}
+h3,.page3-list3-1 h3,.page4-3-1 b,.mainpage13 span,.page14-1-4-1 h4,.main-aside a:nth-child(5) input{
+	font-size: 16px;
+}
+a,p,input,.banner-nav .w,.banner-nav i,.page1-text strong,.page1-text span,.main-bot i,.mainpage2-top strong,.mainpage2-top span,.mainpage2-bot .m2bot,.page3-list3-1 span,.page3-list3-1 p,.page19-1{
+	font-size: 12px;
+}
+input,textarea{
+	background-color: #dbdde1;
+	border: none;
+	outline: none;
+}
+input:focus,textarea:focus{
+	background-color: #fff;
+	border: 1px solid #dd4012;
+}
+.w{
+	width: 1100px;
+	min-width: 1100px;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.fl,.main-nav a,.list2 a,.list2 .page3-list3,.eg1,.page10-1-1 h4,.page17-1:nth-child(even) img,.page17-1:nth-child(odd) div,.page17-2 h4,.page17-2 div{
+	float: left;
+}
+.fr,.page10-1-1 span,.page14-1-1 input:nth-child(odd),.page14-1-3-1 i,.page17-1:nth-child(odd) img,.page17-1:nth-child(even) div,.page17-2 img{
+	float: right;
+}
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+img,.page1-contentl strong,.page3-nav li a,.page3-list3 span,.page10-1-2-1 a,.page6-nav a,.logo li a,.eg1 a,.main-bot a{
+	display: block;
+}
+.main,.mainpage16-2-2 b,.page19-1{
+	background-color: #f0f1f1;
+}
+.main-bot,.page1-content,.page10-1-2-2,.page1-contentr,.mainpage2-bot,.page3-list3 p,.mainpage4-nav,.page4-3,.page4-3>div,.page4-3-1,.page6-nav,.main-page7,.page10-1-2,.mainpage11-nav-1,.page11-1,.page15-2,.page14-1,.page15-1,.page15-1>div,.mainpage16-2{
+	display: flex;
+}
+.header .w,.banner,.banner img,.main-aside,.page15-1>div,.mainpage16-2-2,.mainpage16-2-2 b{
+	position: relative;
+}
+.logo,.banner-nav,.page1 span,.page10-1,.aside,.main-aside a:nth-child(6),.page15-1 a,.mainpage16-2-2::before{
+	position: absolute;
+}
+.main-nav a,.main-bot a,.page1-contentl p,.page1-contentl strong,.page10-1-2-1 a,.page3-list3 span,.mainpage4,.page6-nav a,.page11-1>div>p,.mainpage14 h1,.mainpage14 h2,.page14-3,.main-aside{
+	text-align: center;
+}
+.mainpage2-bot,.main-page7,.page10-1-2,.page14-1{
+	justify-content: space-between;
+}
+.main-nav a,.eg1,.main-bot a,.page2 .w,.page3-list3,.page5,.page14-1-3-1 i:last-child>input,.main-aside,.main-aside div:nth-child(4) input{
+	background-color: #fff;
+}
+.main-bot,.page4-3-1{
+	justify-content: center;
+}
+.page1-contentl p,.page1-contentl strong,.main-aside div:nth-child(4) input,.bot-r a{
+	color: #999;
+}
+.page1-text h2,.mainpage2-top h2,.mainpage15 b,.page17-1 h4,.page17-2 h4{
+	font-size: 18px;
+}
+.page1-text h2,.page4-3-1 .right>div,.page6 h2,.main-page7-r strong,.page8 dt,.page10-1-1,.mainpage11-nav-1 a:hover,.mainpage13 b,.main-aside h2,.main-aside p,.mainpage15 h2,.mainpage15 b,.page17-2 h4{
+	color: #dd4012;
+}
+.page1-text strong,.mainpage2-top h2,.mainpage11-nav-1 a,.mainpage11 h2,.mainpage11 p,.mainpage2-top strong,.page2 p,.mainpage2-bot .m2bot a,.mainpage4-nav a,.mainpage4 h2,.page5 .page6 p,.main-page7-r p,.page6-nav a,.page15-1 a,.mainpage16-2-2 span,.page17-2 p,.mainpage18 p{
+	color: #333;
+}
+.page2 p,.mainpage4-nav a,.page4-2-1 h4,.page4-2-1 p,.page5 .page6 p,.main-page7-r p,.page6-nav a,.page8 dd,.logo li,.page10-1-1 span,.mainpage11 p,.page14-1-4-1 h4 span,.page14-2-1 span,.page14-3 input,.mainpage15 p,.page15-1 a,.page17-1 p,.page17-2 p,.mainpage19 h3{
+	font-size: 14px;
+}
+.page1-text span,.mainpage2-top span,.mainpage2-bot .m2bot{
+	color: #999;
+}
+.head-nav a:hover,.main-bot a:hover,.main-bot a:hover i,.page10-1-2-1 a,.page3-nav li a:hover,.page3-list3-1,.mainpage4-nav a:hover,.page4-2-1 h4,.page6-nav a:hover,.mainpage13 span,.page14-1-3-2 input:focus,.page14-3 input,.main-aside input,.page15-1 a:hover{
+	color: #fff;
+}
+.head-nav a:hover,.main-bot a:hover,.page3-nav li a:hover,.page10-1-2-1 a,.page3-list3-1,.mainpage4-nav a:hover,.page4-2-1 h4,.page6-nav a:hover,.page6 ul li,.mainpage13 span,.page14-1-3-2 input:focus,.page14-3 input,.main-aside input,.page15-1 a:hover{
+	background-color: #dd4012;
+}
+.mainpage16-2-1,.mainpage16-2-2::before{
+	background-color: #ccc;
+}
+.page3-list3 p,.page3-list3 p a,.page4-3-1,.page11-1>div{
+	flex: 1;
+}
+.page2 .w,.page3-nav li a,.page3-list3-1,.page4-2-1 p,.page14-1-1 input,.main-aside div:nth-child(4) input,.page15-1>div{
+	box-sizing: border-box;
+}
+.bot-r,.logo li,.page17-1:nth-child(even) div p{
+	text-align: right;
+}
+.mainpage4-nav,.page8,.page10-1-2-2{
+	justify-content: space-around;
+}
+.page4-2-1 p,.page4-3-1 .right>div,.mainpage11 p,.mainpage15 p,.mainpage16-2-2{
+	text-align: left;
+}
+.banner img,.main-aside,.page15-1 a{
+	left: 50%;
+	transform: translate(-50%,0);
+}
+.main-aside img,.page11-1>div>img,.page15-1>div img,.page15-2>div img{
+	margin:0 auto;
+}
+.page2 p,.page5 .page6 p,.main-page7-r p,.page8 dd,.mainpage15 p,.page17-1 p,.page17-2 p{
+	line-height: 2em;
+}
+.header,.header .w,.head-nav,.head-icon{
+	height: 47px;
+}

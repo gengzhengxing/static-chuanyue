@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>网站首页</title>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+	<div class="header index">
+		<div class="w clearfix">
+			<div class="logo">
+				<a href="index.html#" name="logo" id="logo"><img src="images/logo.jpg"/></a>
+				<ul id="nav">
+					<li><a href="index.html#">HOME 网站首页</a></li>
+					<li><a href="resource.html#">RESOURSE 传悦资源</a></li>
+					<li><a href="demo.html#">CASES 传悦案例</a></li>
+					<li><a href="serch_engine_one.html">SOLUTION 解决方案</a></li>
+					<li><a href="need_to_submit.html#">SUBMIT 需求提交</a></li>
+				</ul>
+				
+			</div>
+				
+			<div class="head-icon fr clearfix">
+				<a><i class="iconfont" style="font-size: 14px">&#xe61c;</i>0535-60652189</a>
+				<a href="#" id="qqlogin"><i class="iconfont" style="color: #dd4012;font-size: 14px">&#xe601;</i></a>
+				<a href="#"><i class="iconfont" style="color: #dd4012">&#xe806;</i></a>
+				<a href="#"><i class="iconfont" style="color: #dd4012">&#xe691;</i></a>
+				<a href="#"><i class="iconfont" style="color: #dd4012;font-size: 12px">&#xe603;</i></a>
+			</div>
+		</div>
+	</div>
+				<script>
+					
+					// document.getElementById("logo").onmouseover=function(){	
+					// 	var navUl=document.getElementById("nav");
+					// 	navUl.style.display="block";
+					// };
+					// document.getElementById("nav").onmouseover=function(){
+					// 	this.style.display="block";
+					// };
+					// document.getElementById("nav").onmouseout=function(){
+					// 	this.style.display="none";
+					// };
+					// document.getElementById("logo").onmouseout=function(){
+					// 	var navUl=document.getElementById("nav");
+					// 	navUl.style.display="none";
+					// };
+					var arrLi=document.getElementById("nav").getElementsByTagName('li');
+					for(var i=0;i<arrLi.length;i++){
+						arrLi[i].onmouseover=function(){
+							this.style.color="#fff";
+							this.style.backgroundColor="#dd4012";
+						};
+						arrLi[i].onmouseout=function(){
+							this.style.color="#a6a6a6";
+							this.style.backgroundColor="rgba(0,0,0,0.6)";
+						}
+					};
+				</script>
+	<div class="banner mainpage10">
+		<img src="images/linghang.jpg" alt="">
+		<div class="w mainpage10-2">
+			<div class="page10-2" id="page10-2">
+				<div class="page10-2-1">
+					<b>传悦观点</b>
+					<span>VIEWPOINT</span>
+					<i></i>
+				</div>
+				<div class="clearfix">
+					<div class="fl"><img src="images/ad-page10.png" alt=""></div>
+					<div class="fr">
+						<p>传悦上线前的准备工作</p>
+						<span>08-17</span>
+						<p>创梦网络科技有限责任公司……</p>
+					</div>
+				</div>
+				<a href="#" id="ad"><img src="images/Plus.png" alt=""></a>
+
+				<script>
+					var adClose=document.getElementById("ad");
+					adClose.onclick=function(){
+						document.getElementById("page10-2").style.display="none";
+					};
+				</script>
+			</div>
+		</div>
+		<div class="w page10-1">
+			<div class="page10-1-1 clearfix">
+				<h4>传悦案例 CASES</h4>
+				<span>网站建设 / 推广运营 / 品牌策划 / 网络全案</span>
+			</div>
+			<div class="page10-1-2">
+				<div class="page10-1-2-1"><a href="#"><i class="iconfont">&#xe60c;</i></a></div>
+				<div class="page10-1-2-2">
+					<a href="#"><img src="images/ko_shouye_img1.jpg" alt=""></a>
+					<a href="#"><img src="images/ko_shouye_img2.jpg" alt=""></a>
+					<a href="#"><img src="images/ko_shouye_img3.jpg" alt=""></a>
+					<a href="#"><img src="images/ko_shouye_img4.jpg" alt=""></a>
+					<a href="#"><img src="images/ko_shouye_img5.jpg" alt=""></a>
+					<a href="#"><img src="images/ko_shouye_img6.jpg" alt=""></a>
+				</div>
+				<div class="page10-1-2-1"><a href="#"><i class="iconfont">&#xe605;</i></a></div>
+			</div>
+		</div>
+		<div class="bot">
+			<div class="w clearfix">
+				<div class="bot-l fl">
+					<span>Copyright ©2013</span>
+					<span>创梦网络科技有限责任公司</span>
+					<span>‖</span>
+					<span>传悦 Chnyoo.cn All Rights Reserved</span>
+					<a href="#"><span>京ICP备12005221号</span></a>
+				</div>
+				<div class="bot-r fr">
+					<a href="about_us_culture.html#">关于传悦</a><a href="#">新闻动态</a><a href="/viewpoint">传悦观点</a><a href="contact_us.html#">联系传悦 </a><a href="recruitment_information.html#">加入传悦</a><a href="#">付款账户</a>
+				</div>
+			</div>	
+		</div>
+	</div>
+	
+
+<div class="qqlogin" style="display: none;" id="qqInput">
+	
+	<form action="">
+		<p>QQ</p>
+		<input type="text">
+		<p>密码</p>
+		<input type="password">
+		<a href="#">登录</a><a href="#">注册</a>
+		<a href="#" id="ad1"><img src="images/Plus.png" alt=""></a>
+	</form>
+	
+		<script>
+			var qqLogin=document.getElementById("qqlogin");
+			qqLogin.onclick=function(){
+				document.getElementById("qqInput").style.display="block";
+			};
+			var adClose1=document.getElementById("ad1");
+			adClose1.onclick=function(){
+				document.getElementById("qqInput").style.display="none";
+			};
+		</script>
+</div>
+</body>
+</html>

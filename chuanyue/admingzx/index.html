@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>传悦管理</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/vue.min.js"></script>
+	<script src="js/axios.min.js"></script>
+	<style>
+		html,body{
+			font-family: "Arial";
+			font-size: 14px;
+			width: 100%;
+			height: 100%;
+		}
+		#wrap{
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		h1{
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			background-color: lightskyblue;
+			height: 160px;
+		}
+		header h1{
+			line-height: 2em;
+			padding-left: 100px;
+			padding-top: 40px;
+		}
+		article{
+			position: relative;
+			height: 1500px;
+		}
+		.aside{
+			width: 200px;
+			background-color: deepskyblue;
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			float: left;
+			padding-top: 20px;
+		}
+		.box{
+			width: 100%;
+			padding: 20px 20px 20px 220px;
+			float: left;
+		}
+		.creat{
+			float: right;
+			margin-right: 50px;
+		}
+		.mask{
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+		.popup{
+			width: 600px;
+			padding: 20px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<h1>传悦管理</h1>
+		</header>
+		<article>
+			<aside class="aside">
+				<ul>
+					<li><a href="#">传悦管理</a></li>
+				</ul>
+			</aside>
+			<div class="box">
+				<button class="btn btn-primary creat" @click="createCon">新建</button>
+				<table class="table table-hover table-responsive">
+					<thead>
+						<tr>
+							<th width="60">编号</th>
+							<th width="210">标题</th>
+							<th>内容</th>
+							<th width="130">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="(item,index) of newslist" v-if="item.title">
+							<td>{{item.id}}</td>
+							<td>{{item.title}}</td>
+							<td>{{item.details.substring(0,80)}}</td>
+							<td>
+								<button class="btn btn-primary" @click="updateCon(index)">修改</button>
+								<button class="btn btn-danger" @click="deleteCon(index)">删除</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</article>
+		<my-popup :isvisi="isVisiable" @confirmsubmit="cancelCon" @cancel="cancelCon"></my-popup>
+		<myupdate :isvisi1="isVisiable1" :con="news" @confirmsubmit="cancelCon" @cancel="cancelCon"></myupdate>
+	</div>
+	<script>
+		Vue.component("myPopup",{
+			template:`
+				<div class="mask" v-if="isvisi">
+					<div class="popup">
+						<form action="http://127.0.0.1:90/addNews" method="get">
+							<div class="form-group">
+						    	<label for="title">标题</label>
+						   	 	<input type="text" class="form-control" id="title" name="title">
+						  </div>
+						  <div class="form-group">
+						    	<label for="">内容</label>
+						   	 	<textarea class="form-control" rows="6" name="details"></textarea>
+						  </div>
+						  <p style="text-align: center;">
+						  	<input type="submit" class="btn btn-info" value="确定提交" @click="confirmsubmit">
+						  	<input type="button" class="btn btn-default" value="取消" @click="cancel">
+						  </p>
+						</form>
+					</div>
+				</div>
+			`,
+			props:["isvisi"],
+			methods:{
+				confirmsubmit(){
+					this.$emit("confirmsubmit")
+				},
+				cancel(){
+					this.$emit("cancel")
+				}
+			}
+		});
+		Vue.component("myupdate",{
+			template:`
+				<div class="mask" v-if="isvisi1">
+					<div class="popup">
+						<form action="http://127.0.0.1:90/updateNews" method="get">
+							<div class="form-group">
+						    	<label for="title">id</label>
+						   	 	<input type="text" class="form-control" id="id" name="id" v-model="con.id" readonly>
+						  </div>
+							<div class="form-group">
+						    	<label for="title">标题</label>
+						   	 	<input type="text" class="form-control" id="title" name="title" v-model="con.title">
+						  </div>
+						  <div class="form-group">
+						    	<label for="">内容</label>
+						   	 	<textarea class="form-control" rows="6" name="details" v-model="con.details"></textarea>
+						  </div>
+						  <p style="text-align: center;">
+						  	<input type="submit" class="btn btn-info" value="确定提交" @click="confirmsubmit">
+						  	<input type="button" class="btn btn-default" value="取消" @click="cancel">
+						  </p>
+						</form>
+					</div>
+				</div>
+			`,
+			props:["isvisi1","con"],
+			methods:{
+				confirmsubmit(){
+					this.$emit("confirmsubmit")
+				},
+				cancel(){
+					this.$emit("cancel")
+				}
+			}
+		});
+
+		var root = new Vue({
+			el:"#wrap",
+			data:{
+				news:null,
+				newslist:null,
+				isVisiable:false,
+				isVisiable1:false
+			},
+			methods:{
+				createCon(){
+					this.isVisiable = true;
+				},
+				cancelCon(index){
+					this.isVisiable = false;
+					this.isVisiable1 = false;
+					this.news = null;
+					axios.get("/newsData").then((response)=>{
+						console.log(response.data)
+						this.newslist = response.data;
+					});
+				},
+				deleteCon(index){
+					if(confirm('确认删除当前行内容吗？')){
+						axios.get(`/deleteNews?newsId=${this.newslist[index].id}`);
+						this.newslist[index].title = null;
+					}
+				},
+				updateCon(index){
+					this.isVisiable1 = true;
+					this.news = this.newslist[index];
+				}
+			},
+			mounted:function(){
+				axios.get("/newsData").then((response)=>{
+					console.log(response.data)
+					this.newslist = response.data;
+				});
+				
+			}
+		})
+	</script>
+</body>
+</html>
